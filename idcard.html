@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ID Card</title>
+<link href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+body { margin: 0; font-family: Arial, sans-serif;  }
+
+nav {
+  width: 100%;
+  background-color: #111;
+  padding: 10px 0;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.jam-digital {
+  color: #00edff;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: 'Orbitron', sans-serif; /* Font futuristik */
+  text-shadow: 0 0 8px #4dddf8, 0 0 16px #4fa4ef, 0 0 24px #0698c2;
+}
+
+@media (max-width: 768px) {
+  .jam-digital {
+    font-size: 20px;
+  }
+}
+        .navbar {
+            background-color: #033378;
+            color: #fff;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;   
+padding: 0 20px;
+        }
+
+        .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            position: relative;
+            width: 30px;
+            height: 21px;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-toggle .bar {
+            background-color: #fff; height: 3px;  width: 100%;   transition: all 0.3s ease;
+        }
+
+        .nav-links {
+            list-style: none; display: flex;  margin: 0;  padding: 0;
+        }
+
+        .nav-links li {  margin: 0 15px; }
+
+        .nav-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: #20bcf1; }
+
+        /* Responsive styles */
+        @media (max-width: 768px) { 
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                z-index: 1000;
+                padding: 0;
+            }
+
+            .nav-links.active { display: flex; }
+            .nav-links li {  margin: 15px 0;  text-align: center; }
+            .nav-links a { font-size: 20px; }
+        }
+
+        /* Hide menu-toggle on larger screens */
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+        
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: 'Poppins', sans-serif; 
+    margin: 0;
+  }
+
+  .id-card {
+    width: 300px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border: 2px solid transparent;
+    background-image: url('https://img.freepik.com/free-vector/geometric-neon-hexagonal-bipyramid-background-vector_53876-171417.jpg?w=1480&t=st=1727005693~exp=1727006293~hmac=2bac3101c726ec772c5f12adbc41bab22386cbebaf4cbb3f142c7ddb5ad14242');
+    background-size: cover;
+    background-position: center;
+    background-clip: content-box, border-box;
+    animation: borderAnimation 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes borderAnimation {
+    0% { background-image: url('https://img.freepik.com/free-vector/geometric-neon-hexagonal-bipyramid-background-vector_53876-171417.jpg?w=1480&t=st=1727005693~exp=1727006293~hmac=2bac3101c726ec772c5f12adbc41bab22386cbebaf4cbb3f142c7ddb5ad14242'); }
+    100% { background-image: url('https://img.freepik.com/free-vector/geometric-neon-hexagonal-bipyramid-background-vector_53876-171417.jpg?w=1480&t=st=1727005693~exp=1727006293~hmac=2bac3101c726ec772c5f12adbc41bab22386cbebaf4cbb3f142c7ddb5ad14242'); }
+  }
+
+  .id-card .content {
+    padding: 30px;
+    text-align: center; 
+  }
+
+  .id-card .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url('https://images.alphacoders.com/131/1312170.png');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(44,11,161,0.493), 0 0 20px rgba(143,76,215,0.5), 0 0 30px rgba(107, 91, 149, 0.5); 
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  }
+
+  .id-card .profile-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(44,11,161,0.6), 0 0 30px rgba(143,76,215,0.6), 0 0 40px rgba(107, 91, 149, 0.6);
+  }
+
+  .id-card .info h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: #61c9f5;
+    text-shadow: 0 0 10px rgba(76, 104, 215, 0.5), 0 0 20px rgba(107, 91, 149, 0.5);
+    transition: text-shadow 0.3s ease-in-out;
+  }
+
+  .id-card .info h4 {
+    font-size: 18px;
+    margin-top: 2px;
+    color: #bdc3c7;
+    text-shadow: 0 0 10px rgba(76, 104, 215, 0.5), 0 0 20px rgba(107, 91, 149, 0.5);
+    transition: text-shadow 0.3s ease-in-out;
+  }
+
+  .id-card .info p {
+    font-size: 14px;
+    color: #bdc3c7;
+    margin-bottom: 30px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .id-card .links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .id-card .links a {
+    color: #bdc3c7;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out, transform 0.5s ease-in-out;
+    text-shadow: 0 0 10px rgba(76, 104, 215, 0.5), 0 0 20px rgba(107, 91, 149, 0.5);
+  }
+
+  .id-card .links a:hover {
+    color: #4c68d7;
+    transform: scale(1.2);
+  }
+</style>
+</head>
+
+<body>
+  <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Cosnetra</a>
+            </div>
+                <div class="nav-container">
+      <div class="jam-digital" id="jam"></div>
+    </div>
+            <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="LoginG.html">Login</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+    
+  <div class="id-card">
+    <div class="content">
+      <div class="profile-pic"></div>
+      <div class="info">
+        <h2>Destria</h2>
+        <h4>Frontend Developer</h4>
+        <p>seseorang yang memiliki<br> cita-cita tinggi untuk menjadi seorang programmer handal</p>
+
+        <div class="links">
+          <a href="#" target="_blank"><i data-feather="facebook"></i></a>
+          <a href="#" target="_blank"><i data-feather="youtube"></i></a>
+          <a href="#" target="_blank"><i data-feather="twitter"></i></a>
+          <a href="#" target="_blank"><i data-feather="instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script>
+    feather.replace();
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            menuToggle.addEventListener('click', function() {
+                  navLinks.classList.toggle('active');
+            });
+            
+            // Menambahkan event listener untuk setiap link dalam menu
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                navLinks.classList.remove('active'); // Menutup menu setelah item diklik
+                });
+            });
+        });
+        function updateJam() {
+  const jamElement = document.getElementById('jam');
+  const sekarang = new Date();
+  
+  let jam = String(sekarang.getHours()).padStart(2, '0');
+  let menit = String(sekarang.getMinutes()).padStart(2, '0');
+  let detik = String(sekarang.getSeconds()).padStart(2, '0');
+
+  jamElement.textContent = `${jam}:${menit}:${detik}`;
+}
+
+setInterval(updateJam, 1000);
+updateJam();
+</script>
+</body>
+</html>
